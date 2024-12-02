@@ -56,7 +56,6 @@ export const App: React.FC = () => {
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
-        setCurrentPage={setCurrentPage}
       />
 
       {itemsPerPage && (

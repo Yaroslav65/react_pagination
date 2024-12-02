@@ -1,11 +1,8 @@
-import React, { Dispatch, SetStateAction } from 'react';
-
 type Props = {
   currentPage: number;
   total: number;
   itemsPerPage: number;
   onPageChange: (page: number) => void;
-  setCurrentPage: Dispatch<SetStateAction<number>>;
 };
 
 export const Pagination: React.FC<Props> = ({
@@ -13,7 +10,6 @@ export const Pagination: React.FC<Props> = ({
   total,
   itemsPerPage,
   onPageChange,
-  setCurrentPage,
 }) => {
   const pages: number[] = [];
 
@@ -23,13 +19,13 @@ export const Pagination: React.FC<Props> = ({
 
   const onNextPage = () => {
     if (currentPage !== pages.length) {
-      setCurrentPage(currentPage + 1);
+      onPageChange(currentPage + 1);
     }
   };
 
   const onPrevPage = () => {
     if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
+      onPageChange(currentPage - 1);
     }
   };
 
